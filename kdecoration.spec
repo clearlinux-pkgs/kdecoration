@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kdecoration
-Version  : 5.19.2
-Release  : 38
-URL      : https://download.kde.org/stable/plasma/5.19.2/kdecoration-5.19.2.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.19.2/kdecoration-5.19.2.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.19.2/kdecoration-5.19.2.tar.xz.sig
+Version  : 5.19.4
+Release  : 39
+URL      : https://download.kde.org/stable/plasma/5.19.4/kdecoration-5.19.4.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.19.4/kdecoration-5.19.4.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.19.4/kdecoration-5.19.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -63,15 +63,15 @@ locales components for the kdecoration package.
 
 
 %prep
-%setup -q -n kdecoration-5.19.2
-cd %{_builddir}/kdecoration-5.19.2
+%setup -q -n kdecoration-5.19.4
+cd %{_builddir}/kdecoration-5.19.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1592970952
+export SOURCE_DATE_EPOCH=1597628936
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -87,10 +87,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1592970952
+export SOURCE_DATE_EPOCH=1597628936
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kdecoration
-cp %{_builddir}/kdecoration-5.19.2/COPYING.LIB %{buildroot}/usr/share/package-licenses/kdecoration/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/kdecoration-5.19.4/COPYING.LIB %{buildroot}/usr/share/package-licenses/kdecoration/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 pushd clr-build
 %make_install
 popd
@@ -133,8 +133,8 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libkdecorations2.so.5
-/usr/lib64/libkdecorations2.so.5.19.2
-/usr/lib64/libkdecorations2private.so.5.19.2
+/usr/lib64/libkdecorations2.so.5.19.4
+/usr/lib64/libkdecorations2private.so.5.19.4
 /usr/lib64/libkdecorations2private.so.7
 
 %files license
