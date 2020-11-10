@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kdecoration
-Version  : 5.20.2
-Release  : 42
-URL      : https://download.kde.org/stable/plasma/5.20.2/kdecoration-5.20.2.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.20.2/kdecoration-5.20.2.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.20.2/kdecoration-5.20.2.tar.xz.sig
+Version  : 5.20.3
+Release  : 43
+URL      : https://download.kde.org/stable/plasma/5.20.3/kdecoration-5.20.3.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.20.3/kdecoration-5.20.3.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.20.3/kdecoration-5.20.3.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-3.0
@@ -63,15 +63,15 @@ locales components for the kdecoration package.
 
 
 %prep
-%setup -q -n kdecoration-5.20.2
-cd %{_builddir}/kdecoration-5.20.2
+%setup -q -n kdecoration-5.20.3
+cd %{_builddir}/kdecoration-5.20.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1603844170
+export SOURCE_DATE_EPOCH=1605051097
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -87,13 +87,13 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1603844170
+export SOURCE_DATE_EPOCH=1605051097
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kdecoration
-cp %{_builddir}/kdecoration-5.20.2/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/kdecoration/3c3d7573e137d48253731c975ecf90d74cfa9efe
-cp %{_builddir}/kdecoration-5.20.2/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kdecoration/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/kdecoration-5.20.2/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kdecoration/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/kdecoration-5.20.2/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kdecoration/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kdecoration-5.20.3/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/kdecoration/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/kdecoration-5.20.3/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kdecoration/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/kdecoration-5.20.3/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kdecoration/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kdecoration-5.20.3/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kdecoration/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -136,8 +136,8 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libkdecorations2.so.5
-/usr/lib64/libkdecorations2.so.5.20.2
-/usr/lib64/libkdecorations2private.so.5.20.2
+/usr/lib64/libkdecorations2.so.5.20.3
+/usr/lib64/libkdecorations2private.so.5.20.3
 /usr/lib64/libkdecorations2private.so.7
 
 %files license
