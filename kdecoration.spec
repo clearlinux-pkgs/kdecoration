@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kdecoration
-Version  : 5.22.1
-Release  : 48
-URL      : https://download.kde.org/stable/plasma/5.22.1/kdecoration-5.22.1.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.22.1/kdecoration-5.22.1.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.22.1/kdecoration-5.22.1.tar.xz.sig
+Version  : 5.22.5
+Release  : 49
+URL      : https://download.kde.org/stable/plasma/5.22.5/kdecoration-5.22.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.22.5/kdecoration-5.22.5.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.22.5/kdecoration-5.22.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-3.0
@@ -63,37 +63,37 @@ locales components for the kdecoration package.
 
 
 %prep
-%setup -q -n kdecoration-5.22.1
-cd %{_builddir}/kdecoration-5.22.1
+%setup -q -n kdecoration-5.22.5
+cd %{_builddir}/kdecoration-5.22.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1623804437
+export SOURCE_DATE_EPOCH=1630894712
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1623804437
+export SOURCE_DATE_EPOCH=1630894712
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kdecoration
-cp %{_builddir}/kdecoration-5.22.1/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/kdecoration/3c3d7573e137d48253731c975ecf90d74cfa9efe
-cp %{_builddir}/kdecoration-5.22.1/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kdecoration/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/kdecoration-5.22.1/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kdecoration/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/kdecoration-5.22.1/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kdecoration/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kdecoration-5.22.5/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/kdecoration/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/kdecoration-5.22.5/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kdecoration/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/kdecoration-5.22.5/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kdecoration/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kdecoration-5.22.5/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kdecoration/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -136,8 +136,8 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libkdecorations2.so.5
-/usr/lib64/libkdecorations2.so.5.22.1
-/usr/lib64/libkdecorations2private.so.5.22.1
+/usr/lib64/libkdecorations2.so.5.22.5
+/usr/lib64/libkdecorations2private.so.5.22.5
 /usr/lib64/libkdecorations2private.so.8
 
 %files license
