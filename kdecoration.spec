@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : kdecoration
-Version  : 5.26.5
-Release  : 74
-URL      : https://download.kde.org/stable/plasma/5.26.5/kdecoration-5.26.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.26.5/kdecoration-5.26.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.26.5/kdecoration-5.26.5.tar.xz.sig
+Version  : 5.27.0
+Release  : 75
+URL      : https://download.kde.org/stable/plasma/5.27.0/kdecoration-5.27.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.27.0/kdecoration-5.27.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.27.0/kdecoration-5.27.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CC0-1.0 LGPL-2.1 LGPL-3.0
@@ -67,15 +67,15 @@ locales components for the kdecoration package.
 
 
 %prep
-%setup -q -n kdecoration-5.26.5
-cd %{_builddir}/kdecoration-5.26.5
+%setup -q -n kdecoration-5.27.0
+cd %{_builddir}/kdecoration-5.27.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1673303748
+export SOURCE_DATE_EPOCH=1676674541
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -91,7 +91,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1673303748
+export SOURCE_DATE_EPOCH=1676674541
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kdecoration
 cp %{_builddir}/kdecoration-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kdecoration/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
@@ -143,9 +143,9 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libkdecorations2.so.5
-/usr/lib64/libkdecorations2.so.5.26.5
-/usr/lib64/libkdecorations2private.so.5.26.5
-/usr/lib64/libkdecorations2private.so.9
+/usr/lib64/libkdecorations2.so.5.27.0
+/usr/lib64/libkdecorations2private.so.10
+/usr/lib64/libkdecorations2private.so.5.27.0
 
 %files license
 %defattr(0644,root,root,0755)
