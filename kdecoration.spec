@@ -7,7 +7,7 @@
 #
 Name     : kdecoration
 Version  : 5.27.5
-Release  : 81
+Release  : 82
 URL      : https://download.kde.org/stable/plasma/5.27.5/kdecoration-5.27.5.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.27.5/kdecoration-5.27.5.tar.xz
 Source1  : https://download.kde.org/stable/plasma/5.27.5/kdecoration-5.27.5.tar.xz.sig
@@ -76,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684808539
+export SOURCE_DATE_EPOCH=1685568777
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -109,7 +109,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1684808539
+export SOURCE_DATE_EPOCH=1685568777
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kdecoration
 cp %{_builddir}/kdecoration-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kdecoration/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
@@ -131,8 +131,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libkdecorations2.so
-/V3/usr/lib64/libkdecorations2private.so
 /usr/include/KDecoration2/KDecoration2/DecoratedClient
 /usr/include/KDecoration2/KDecoration2/Decoration
 /usr/include/KDecoration2/KDecoration2/DecorationButton
@@ -166,9 +164,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libkdecorations2.so.5
 /V3/usr/lib64/libkdecorations2.so.5.27.5
-/V3/usr/lib64/libkdecorations2private.so.10
 /V3/usr/lib64/libkdecorations2private.so.5.27.5
 /usr/lib64/libkdecorations2.so.5
 /usr/lib64/libkdecorations2.so.5.27.5
